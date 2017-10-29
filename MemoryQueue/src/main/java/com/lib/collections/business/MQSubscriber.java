@@ -2,7 +2,6 @@ package com.lib.collections.business;
 
 import com.lib.collections.core.inteface.MQSubscribeProcessor;
 import com.lib.collections.core.inteface.MQSubscriptionReader;
-import com.lib.collections.queue.InMemQueue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 
 import java.util.*;
@@ -20,7 +19,7 @@ public class MQSubscriber implements MQSubscribeProcessor {
         subscriptionMap = new HashMap<>();
     }
 
-    public static MQSubscriber getMqSubscriber(final InMemQueue queue){
+    public static MQSubscriber getMqSubscriber(final com.lib.collections.queue.Queue queue){
         if(mqSubscriber == null){
             mqSubscriber = new MQSubscriber();
             MQWriter.getMqWriter(queue).attachSubscriber(new InternalMQSubscriber(mqSubscriber));

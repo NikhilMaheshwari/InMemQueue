@@ -2,10 +2,9 @@ package com.lib.collections.business;
 
 import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MQConnectionState;
-import com.lib.collections.core.inteface.MQMessageReader;
 import com.lib.collections.core.inteface.MQSubscriptionReader;
 import com.lib.collections.core.inteface.MQWriteProcessor;
-import com.lib.collections.queue.InMemQueue;
+import com.lib.collections.queue.Queue;
 import com.lib.collections.core.classes.MQWriteResponse;
 import com.lib.collections.core.enums.MqReturnCode;
 import com.sun.javaws.exceptions.InvalidArgumentException;
@@ -20,7 +19,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class MQWriter implements MQWriteProcessor {
     private String id;
-    private InMemQueue queue;
+    private Queue queue;
 
     private boolean isConnected;
 
@@ -30,12 +29,12 @@ public class MQWriter implements MQWriteProcessor {
 
     private static MQWriter mqWriter;
 
-    private MQWriter(InMemQueue queue){
+    private MQWriter(Queue queue){
         this.queue = queue;
         this.id = UUID.randomUUID().toString();
     }
 
-    public static MQWriter getMqWriter(final InMemQueue queue) {
+    public static MQWriter getMqWriter(final Queue queue) {
         if(mqWriter ==null){
             mqWriter = new MQWriter(queue);
         }

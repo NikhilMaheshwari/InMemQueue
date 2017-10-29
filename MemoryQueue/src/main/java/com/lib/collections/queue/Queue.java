@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by nikzz on 27/10/17.
  */
-public class InMemQueue  {
+public class Queue {
 
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition notFull  = lock.newCondition();
@@ -29,7 +29,7 @@ public class InMemQueue  {
         return count;
     }
 
-    public InMemQueue(final int size){
+    public Queue(final int size){
         this.size = size;
         items = new String[size];
         count = 0;
@@ -87,7 +87,7 @@ public class InMemQueue  {
     @Override
     public String toString() {
         StringBuilder response = new StringBuilder();
-        response.append(String.format("InMemQueue of capacity %d. \n", items.length));
+        response.append(String.format("Queue of capacity %d. \n", items.length));
         response.append(String.format("and Current size %d", count));
         if(items.length == 0 ){
             response.toString();

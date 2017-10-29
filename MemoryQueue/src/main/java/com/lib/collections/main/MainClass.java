@@ -1,9 +1,7 @@
 package com.lib.collections.main;
 
-import com.lib.collections.MemQueue;
+import com.lib.collections.InMemoryQueue;
 import com.lib.collections.business.MQReader;
-import com.lib.collections.business.MQSubscriber;
-import com.lib.collections.business.MQWriter;
 import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.enums.MqReturnCode;
@@ -15,7 +13,7 @@ import com.sun.javaws.exceptions.InvalidArgumentException;
  */
 public class MainClass {
     public static void main(String[] args) throws InvalidArgumentException {
-        MemQueue queue = new MemQueue(100);
+        InMemoryQueue queue = new InMemoryQueue(100);
         org.apache.log4j.BasicConfigurator.configure();
 
         final MQWriteProcessor producer = queue.getProducer();

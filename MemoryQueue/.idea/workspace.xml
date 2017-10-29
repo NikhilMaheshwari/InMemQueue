@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c72a0a50-a976-4356-8c90-52d590a6d1ca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscribeProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQWriteProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MemoryQueue.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../MemQueue.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/InMemQueue.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/Queue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQSubscriber.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQSubscriber.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQWriter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/lib/collections/InMemQueueTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/lib/collections/InMemQueueTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,19 +26,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+                <state relative-caret-position="140">
+                  <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#2238#2239#0" expanded="true" />
-                    <element signature="e#2327#2328#0" expanded="true" />
-                    <element signature="e#2961#2962#0" expanded="true" />
-                    <element signature="e#3015#3016#0" expanded="true" />
-                    <element signature="e#3233#3234#0" expanded="true" />
-                    <element signature="e#3290#3291#0" expanded="true" />
+                    <element signature="e#2157#2158#0" expanded="true" />
+                    <element signature="e#2246#2247#0" expanded="true" />
+                    <element signature="e#2880#2881#0" expanded="true" />
+                    <element signature="e#2934#2935#0" expanded="true" />
+                    <element signature="e#3152#3153#0" expanded="true" />
+                    <element signature="e#3209#3210#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -63,7 +60,7 @@
             <entry file="file://$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="404">
-                  <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+                  <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -73,11 +70,11 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQSubscriber.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="450">
-                  <caret line="34" column="104" lean-forward="true" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="104" />
+                  <caret line="33" column="104" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="104" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#544#545#0" expanded="true" />
-                    <element signature="e#593#594#0" expanded="true" />
+                    <element signature="e#499#500#0" expanded="true" />
+                    <element signature="e#548#549#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -93,24 +90,29 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="InMemQueue.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/queue/InMemQueue.java">
+          <file leaf-file-name="Queue.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/queue/Queue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+                <state relative-caret-position="330">
+                  <caret line="22" column="23" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <marker date="1509261335000" expanded="true" signature="726:853" ph="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MemQueue.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java">
+          <file leaf-file-name="InMemoryQueue.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="555">
-                  <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-                  <folding />
+                <state relative-caret-position="105">
+                  <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#1097#1098#0" expanded="false" />
+                    <element signature="e#1158#1159#0" expanded="false" />
+                    <marker date="1509261373000" expanded="true" signature="602:823" ph="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -119,11 +121,11 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQWriter.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="395">
-                  <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+                  <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1495#1496#0" expanded="true" />
-                    <element signature="e#1529#1530#0" expanded="true" />
+                    <element signature="e#1417#1418#0" expanded="true" />
+                    <element signature="e#1451#1452#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -239,7 +241,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/classes/MqSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/SubscriptionListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscriptionReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/InMemQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/InternalMQSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQWriteProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQWriter.java" />
@@ -248,8 +249,11 @@
         <option value="$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscribeProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/InMemQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/Queue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java" />
       </list>
     </option>
   </component>
@@ -943,7 +947,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508863739159</updated>
-      <workItem from="1508863740533" duration="39946000" />
+      <workItem from="1508863740533" duration="40158000" />
     </task>
     <servers />
   </component>
@@ -980,7 +984,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39946000" />
+    <option name="totallyTimeSpent" value="40158000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="0" />
@@ -991,7 +995,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32880098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1020,7 +1024,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java</url>
-          <line>29</line>
+          <line>28</line>
           <properties class="com.lib.collections.MemQueueTest" method="Test_Write_To_Mq">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1194,11 +1198,11 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1495#1496#0" expanded="true" />
-            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="e#1417#1418#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1224,7 +1228,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
-          <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1242,45 +1246,50 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="34" column="104" lean-forward="true" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="104" />
+          <caret line="33" column="104" lean-forward="true" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="104" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/queue/InMemQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="140">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
-            <element signature="e#2961#2962#0" expanded="true" />
-            <element signature="e#3015#3016#0" expanded="true" />
-            <element signature="e#3233#3234#0" expanded="true" />
-            <element signature="e#3290#3291#0" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
+            <element signature="e#2880#2881#0" expanded="true" />
+            <element signature="e#2934#2935#0" expanded="true" />
+            <element signature="e#3152#3153#0" expanded="true" />
+            <element signature="e#3209#3210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/queue/Queue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="23" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1509261335000" expanded="true" signature="726:853" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#1097#1098#0" expanded="false" />
+            <element signature="e#1158#1159#0" expanded="false" />
+            <marker date="1509261373000" expanded="true" signature="602:823" ph="{...}" />
           </folding>
         </state>
       </provider>

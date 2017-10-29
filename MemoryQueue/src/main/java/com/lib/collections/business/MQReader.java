@@ -6,7 +6,7 @@ import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.enums.MqReturnCode;
 import com.lib.collections.core.inteface.MQMessageReader;
 import com.lib.collections.core.inteface.MQReadProcessor;
-import com.lib.collections.queue.InMemQueue;
+import com.lib.collections.queue.Queue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.apache.log4j.Logger;
 
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class MQReader implements MQReadProcessor{
 
-    private InMemQueue queue;
+    private Queue queue;
 
     private boolean isReadingEnabled;
 
@@ -41,11 +41,11 @@ public class MQReader implements MQReadProcessor{
         return readerName;
     }
 
-    public MQReader(final InMemQueue queue, final MQMessageReader reader, final boolean isReadingEnabled){
+    public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled){
         this(queue, reader,isReadingEnabled,null);
     }
 
-    public MQReader(final InMemQueue queue, final MQMessageReader reader,final boolean isReadingEnabled ,final String name){
+    public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled , final String name){
         this.queue = queue;
         this.readerName = name;
         this.isReadingEnabled = isReadingEnabled;

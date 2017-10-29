@@ -4,28 +4,28 @@ import com.lib.collections.business.MQReader;
 import com.lib.collections.business.MQSubscriber;
 import com.lib.collections.business.MQWriter;
 import com.lib.collections.core.inteface.*;
-import com.lib.collections.queue.InMemQueue;
+import com.lib.collections.queue.Queue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 
 /**
  * Created by nikzz on 27/10/17.
  */
-public class MemQueue implements MemoryQueue{
+public class InMemoryQueue implements MemoryQueue{
 
     private int size;
-    private InMemQueue queue;
-    private static MemQueue memQueue;
+    private Queue queue;
+    private static InMemoryQueue memQueue;
 
     /**
      * @param size
      */
-    public MemQueue(int size) throws InvalidArgumentException {
+    public InMemoryQueue(int size) throws InvalidArgumentException {
         if(size <= 0){
             String[] errorMessge = {"Size can not be null"};
             throw new InvalidArgumentException(errorMessge);
         }
         this.size = size;
-        queue = new InMemQueue(size);
+        queue = new Queue(size);
     }
 
     /**

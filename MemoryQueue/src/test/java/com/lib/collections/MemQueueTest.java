@@ -1,7 +1,6 @@
 package com.lib.collections;
 
 import com.lib.collections.business.MQReader;
-import com.lib.collections.business.MQWriter;
 import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MqReturnCode;
@@ -16,13 +15,13 @@ import org.junit.Test;
  */
 public class MemQueueTest {
 
-    private MemQueue queue;
+    private InMemoryQueue queue;
 
     private int size = 1000;
 
     @Before
     public void setUp() throws Exception {
-        queue = new MemQueue(size);
+        queue = new InMemoryQueue(size);
         org.apache.log4j.BasicConfigurator.configure();
     }
 

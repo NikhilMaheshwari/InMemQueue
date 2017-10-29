@@ -1,6 +1,6 @@
 package com.lib.collections;
 
-import com.lib.collections.queue.InMemQueue;
+import com.lib.collections.queue.Queue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,11 +11,11 @@ import java.util.Date;
  */
 public class InMemQueueTest {
 
-    private InMemQueue queue;
+    private Queue queue;
 
     @Before
     public void setUp() throws Exception {
-        queue = new InMemQueue(100);
+        queue = new Queue(100);
     }
 
     @Test
