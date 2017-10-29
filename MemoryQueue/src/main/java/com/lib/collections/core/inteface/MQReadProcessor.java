@@ -6,10 +6,35 @@ import com.lib.collections.core.enums.MQConnectionState;
  * Created by nikzz on 29/10/17.
  */
 public interface MQReadProcessor {
+    /**
+     * @return
+     */
     boolean isConnected();
+
+    /**
+     * @return
+     */
     String getReaderName();
+
+    /**
+     * @return
+     */
     MQConnectionState connect();
+
+    /**
+     * @return
+     */
     MQConnectionState disconnect();
-    void setReadingEnabled();
+
+    /**
+     *
+     */
+    default void setReadingEnabled() {
+
+    }
+
+    /**
+     * @throws IllegalAccessException
+     */
     void startReading() throws IllegalAccessException;
 }

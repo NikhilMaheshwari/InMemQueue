@@ -24,7 +24,10 @@ public class Queue {
     private int  takeptr;
     private int count;
 
-    
+
+    /**
+     * @return
+     */
     public int getCount() {
         return count;
     }
@@ -37,6 +40,12 @@ public class Queue {
         takeptr = 0;
     }
 
+    /**
+     * @param x
+     * @throws InterruptedException
+     * @throws InvalidArgumentException
+     * @throws TimeoutException
+     */
     public void put(String x) throws InterruptedException, InvalidArgumentException, TimeoutException {
 
         if(x == null){
@@ -64,6 +73,10 @@ public class Queue {
 
     }
 
+    /**
+     * @return
+     * @throws InterruptedException
+     */
     public String take() throws InterruptedException {
 
         lock.lock();
