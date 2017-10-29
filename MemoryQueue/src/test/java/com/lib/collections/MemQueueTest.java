@@ -27,7 +27,7 @@ public class MemQueueTest {
 
     @Test
     public void Test_Write_To_Mq() throws Exception{
-        final MQWriteProcessor producer = queue.getProducer();
+        final MQWriteProcessor producer = queue.getMqWriter();
 
 
         for(int j = 0; j < 10; j++)

@@ -1,6 +1,7 @@
 package com.lib.collections.business;
 
 import com.lib.collections.core.classes.Message;
+import com.lib.collections.core.classes.ReaderCondition;
 import com.lib.collections.core.enums.MQConnectionState;
 import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.enums.MqReturnCode;
@@ -10,6 +11,7 @@ import com.lib.collections.queue.Queue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
@@ -30,6 +32,8 @@ public class MQReader implements MQReadProcessor{
     private boolean isConnected;
 
     private MQMessageReader messageReader;
+
+    private ArrayList<ReaderCondition> readerConditions;
 
     private static Logger logger = Logger.getLogger(MQReader.class);
 
@@ -56,7 +60,7 @@ public class MQReader implements MQReadProcessor{
      * @param reader
      * @param isReadingEnabled
      */
-    public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled){
+    public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled) throws InvalidArgumentException{
         this(queue, reader,isReadingEnabled,null);
     }
 
@@ -66,11 +70,39 @@ public class MQReader implements MQReadProcessor{
      * @param isReadingEnabled
      * @param name
      */
-    public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled , final String name){
+    public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled , final String name) throws InvalidArgumentException {
+        this(queue, reader, isReadingEnabled, name, null);
+    }
+
+    public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled , final String name, ArrayList<ReaderCondition> readerConditions) throws InvalidArgumentException {
+        if(name == null){
+            String[] errorMessage = {"Reader Name can not be null for Defining the readerCondition."};
+            throw new InvalidArgumentException(errorMessage);
+        }
+
         this.queue = queue;
         this.readerName = name;
         this.isReadingEnabled = isReadingEnabled;
         this.messageReader = reader;
+        this.readerConditions = readerConditions;
+    }
+
+    /**
+     * @param readerConditions
+     */
+    public void setReaderConditions(ArrayList<ReaderCondition> readerConditions) throws InvalidArgumentException {
+        if(getReaderName() == null){
+            String[] errorMessage = {"Reader Name can not be null for Defining the readerCondition."};
+            throw new InvalidArgumentException(errorMessage);
+        }
+        this.readerConditions = readerConditions;
+    }
+
+    /**
+     * @return
+     */
+    public ArrayList<ReaderCondition> getReaderConditions() {
+        return readerConditions;
     }
 
     /**
@@ -130,6 +162,9 @@ public class MQReader implements MQReadProcessor{
     private void read() {
         try {
             while (isReading) {
+
+
+
                 final String data = queue.take();
                 String messageId = UUID.randomUUID().toString();
                 Date createdOn = new Date();
@@ -139,9 +174,7 @@ public class MQReader implements MQReadProcessor{
                 if(action == MQReadAction.COMMIT){
                     continue;
                 }
-                /*MQWriter writer = MQWriter.getMqWriter(queue);
-                writer.connect();
-                writer.WriteMessage(data);*/
+
                 Thread thread = new Thread(() -> {
                     try {
                         queue.put(data);

@@ -16,7 +16,7 @@ public class MainClass {
         MemoryQueue queue = new InMemoryQueue(100);
         org.apache.log4j.BasicConfigurator.configure();
 
-        final MQWriteProcessor producer = queue.getProducer();
+        final MQWriteProcessor producer = queue.getMqWriter();
 
         MQSubscribeProcessor subscriber = queue.getMqSubscriber();
         subscriber.subscribe("^[^0-9]*[12]?[0-9]{1,2}[^0-9]*", new SubscriptionListener());

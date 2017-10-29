@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c72a0a50-a976-4356-8c90-52d590a6d1ca" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/classes/ReaderCondition.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/enums/ReadCondition.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../MemQueue.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQMessageReader.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQMessageReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscribeProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscribeProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscriptionReader.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscriptionReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQWriteProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQWriteProcessor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MemoryQueue.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MemoryQueue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/Queue.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/Queue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,9 +28,11 @@
       <file leaf-file-name="MQReadProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="640">
+              <caret line="49" column="106" lean-forward="false" selection-start-line="49" selection-start-column="106" selection-end-line="49" selection-end-column="106" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,43 +81,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MqReturnCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/enums/MqReturnCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemoryQueue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MemoryQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="InMemoryQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="50" column="49" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="49" />
+            <state relative-caret-position="415">
+              <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java">
+      <file leaf-file-name="MQReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="669">
+              <caret line="62" column="132" lean-forward="false" selection-start-line="62" selection-start-column="132" selection-end-line="62" selection-end-column="132" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3070#3071#0" expanded="true" />
+                <element signature="e#3109#3110#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadCondition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/enums/ReadCondition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReaderCondition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/classes/ReaderCondition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#710#711#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#905#906#0" expanded="true" />
+                <element signature="e#985#986#0" expanded="true" />
+                <element signature="e#1019#1020#0" expanded="true" />
+                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#1172#1173#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,10 +150,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -186,8 +202,6 @@
         <option value="$PROJECT_DIR$/src/test/java/com/lib/collections/MemQueueTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/InMemQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/MemQueue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQSubscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/classes/Message.java" />
@@ -198,11 +212,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/main/MainClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MemoryQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQMessageReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscribeProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscriptionReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQWriteProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/queue/Queue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/enums/ReadCondition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/classes/ReaderCondition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java" />
       </list>
     </option>
   </component>
@@ -862,7 +880,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508863739159</updated>
-      <workItem from="1508863740533" duration="41144000" />
+      <workItem from="1508863740533" duration="43262000" />
     </task>
     <servers />
   </component>
@@ -899,7 +917,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41144000" />
+    <option name="totallyTimeSpent" value="43262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="0" />
@@ -1039,16 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="113" column="5" lean-forward="false" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -1142,14 +1150,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQSubscribeProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1186,10 +1186,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/enums/ReadCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/classes/ReaderCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1172#1173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/core/inteface/MQReadProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
-          <caret line="50" column="49" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="49" />
+          <caret line="49" column="106" lean-forward="false" selection-start-line="49" selection-start-column="106" selection-end-line="49" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/business/MQReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="62" column="132" lean-forward="false" selection-start-line="62" selection-start-column="132" selection-end-line="62" selection-end-column="132" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
+            <element signature="e#3109#3110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lib/collections/InMemoryQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
           <folding />
         </state>
       </provider>

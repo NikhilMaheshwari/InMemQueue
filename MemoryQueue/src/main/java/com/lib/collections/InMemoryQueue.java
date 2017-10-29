@@ -31,7 +31,7 @@ public class InMemoryQueue implements MemoryQueue{
     /**
      * @return
      */
-    public MQWriteProcessor getProducer() {
+    public MQWriteProcessor getMqWriter() {
         return MQWriter.getMqWriter(queue);
     }
 
@@ -40,7 +40,7 @@ public class InMemoryQueue implements MemoryQueue{
      * @param name
      * @return
      */
-    public MQReadProcessor getMqReader(MQMessageReader reader, String name){
+    public MQReadProcessor getMqReader(MQMessageReader reader, String name) throws InvalidArgumentException {
         return new MQReader(queue, reader, true,name);
     }
 
