@@ -15,7 +15,7 @@ public class InternalMQSubscriber implements MQSubscriptionReader {
 
     private MQSubscriber subscriber;
 
-    public InternalMQSubscriber(MQSubscriber subscriber) {
+    public InternalMQSubscriber(final MQSubscriber subscriber) {
         this.subscriber = subscriber;
     }
 

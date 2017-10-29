@@ -34,14 +34,14 @@ public class MQWriter {
         this.id = UUID.randomUUID().toString();
     }
 
-    public static MQWriter getMqWriter(InMemQueue queue) {
+    public static MQWriter getMqWriter(final InMemQueue queue) {
         if(mqWriter ==null){
             mqWriter = new MQWriter(queue);
         }
         return mqWriter;
     }
 
-    protected void attachSubscriber(MQSubscriptionReader subscriberReader){
+    protected void attachSubscriber(final MQSubscriptionReader subscriberReader){
         this.subscriberReader = subscriberReader;
     }
 
@@ -60,7 +60,7 @@ public class MQWriter {
         return MQConnectionState.CONNECTED;
     }
 
-    public MQWriteResponse WriteMessage(String message){
+    public MQWriteResponse WriteMessage(final String message){
         MQWriteResponse response = new MQWriteResponse();
 
         try{

@@ -19,7 +19,7 @@ public class MQSubscriber {
         subscriptionMap = new HashMap<>();
     }
 
-    public static MQSubscriber getMqSubscriber(InMemQueue queue){
+    public static MQSubscriber getMqSubscriber(final InMemQueue queue){
         if(mqSubscriber == null){
             mqSubscriber = new MQSubscriber();
             MQWriter.getMqWriter(queue).attachSubscriber(new InternalMQSubscriber(mqSubscriber));

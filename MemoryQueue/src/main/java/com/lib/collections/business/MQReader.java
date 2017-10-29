@@ -40,11 +40,11 @@ public class MQReader {
         return readerName;
     }
 
-    public MQReader(InMemQueue queue, MQMessageReader reader, boolean isReadingEnabled){
+    public MQReader(final InMemQueue queue, final MQMessageReader reader, final boolean isReadingEnabled){
         this(queue, reader,isReadingEnabled,null);
     }
 
-    public MQReader(InMemQueue queue, MQMessageReader reader,boolean isReadingEnabled ,String name){
+    public MQReader(final InMemQueue queue, final MQMessageReader reader,final boolean isReadingEnabled ,final String name){
         this.queue = queue;
         this.readerName = name;
         this.isReadingEnabled = isReadingEnabled;
