@@ -1,0 +1,9 @@
+1. Low letency In memory queue with fixed size
+2. Size is configurable
+3. Holds JSON messages
+4. Queue will have only one Producer and n number of consumers
+5. Allow message subscription based on pattern
+6. Handle concurrent write and reads
+7. Provide retry in case of failure during processing
+8. Consumers might have dependency berween them like A is dependent on B and B is dependent on C
+9. 
