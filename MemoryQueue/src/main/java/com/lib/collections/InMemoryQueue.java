@@ -20,6 +20,7 @@ public class InMemoryQueue implements MemoryQueue{
      * @param size
      */
     public InMemoryQueue(int size) throws InvalidArgumentException {
+        org.apache.log4j.BasicConfigurator.configure();
         if(size <= 0){
             String[] errorMessge = {"Size can not be null"};
             throw new InvalidArgumentException(errorMessge);

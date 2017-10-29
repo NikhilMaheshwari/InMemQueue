@@ -14,7 +14,6 @@ import com.sun.javaws.exceptions.InvalidArgumentException;
 public class MainClass {
     public static void main(String[] args) throws InvalidArgumentException {
         MemoryQueue queue = new InMemoryQueue(100);
-        org.apache.log4j.BasicConfigurator.configure();
 
         final MQWriteProcessor producer = queue.getMqWriter();
 
