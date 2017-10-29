@@ -1,5 +1,6 @@
 package com.lib.collections.business;
 
+import com.lib.collections.core.inteface.MQSubscribeProcessor;
 import com.lib.collections.core.inteface.MQSubscriptionReader;
 import com.lib.collections.queue.InMemQueue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
@@ -9,7 +10,7 @@ import java.util.*;
 /**
  * Created by nikzz on 28/10/17.
  */
-public class MQSubscriber {
+public class MQSubscriber implements MQSubscribeProcessor {
 
     private HashMap<String,ArrayList<MQSubscriptionReader>> subscriptionMap;
 

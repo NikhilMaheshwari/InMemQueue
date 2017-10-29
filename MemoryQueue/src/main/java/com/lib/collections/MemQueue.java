@@ -3,15 +3,14 @@ package com.lib.collections;
 import com.lib.collections.business.MQReader;
 import com.lib.collections.business.MQSubscriber;
 import com.lib.collections.business.MQWriter;
-import com.lib.collections.core.inteface.MQMessageReader;
-import com.lib.collections.core.inteface.MQSubscriptionReader;
+import com.lib.collections.core.inteface.*;
 import com.lib.collections.queue.InMemQueue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 
 /**
  * Created by nikzz on 27/10/17.
  */
-public class MemQueue {
+public class MemQueue implements MemoryQueue{
 
     private int size;
     private InMemQueue queue;
@@ -32,7 +31,7 @@ public class MemQueue {
     /**
      * @return
      */
-    public MQWriter getProducer() {
+    public MQWriteProcessor getProducer() {
         return MQWriter.getMqWriter(queue);
     }
 
@@ -41,11 +40,11 @@ public class MemQueue {
      * @param name
      * @return
      */
-    public MQReader getMqReader(MQMessageReader reader, String name){
+    public MQReadProcessor getMqReader(MQMessageReader reader, String name){
         return new MQReader(queue, reader, true,name);
     }
 
-    public MQSubscriber getMqSubscriber(){
+    public MQSubscribeProcessor getMqSubscriber(){
         return MQSubscriber.getMqSubscriber(queue);
     }
 }

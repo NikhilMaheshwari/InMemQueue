@@ -6,6 +6,8 @@ import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MqReturnCode;
 import com.lib.collections.core.inteface.MQMessageReader;
+import com.lib.collections.core.inteface.MQReadProcessor;
+import com.lib.collections.core.inteface.MQWriteProcessor;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +28,7 @@ public class MemQueueTest {
 
     @Test
     public void Test_Write_To_Mq() throws Exception{
-        final MQWriter producer = queue.getProducer();
+        final MQWriteProcessor producer = queue.getProducer();
 
 
         for(int j = 0; j < 10; j++)
@@ -44,7 +46,7 @@ public class MemQueueTest {
             thread.start();
         }*/
 
-        MQReader reader = queue.getMqReader(new QueueListener(), "Reader1");
+        MQReadProcessor reader = queue.getMqReader(new QueueListener(), "Reader1");
         reader.connect();
         System.out.println("Reader is : "+reader.isConnected());
         reader.startReading();

@@ -7,8 +7,7 @@ import com.lib.collections.business.MQWriter;
 import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.enums.MqReturnCode;
-import com.lib.collections.core.inteface.MQMessageReader;
-import com.lib.collections.core.inteface.MQSubscriptionReader;
+import com.lib.collections.core.inteface.*;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 
 /**
@@ -19,10 +18,9 @@ public class MainClass {
         MemQueue queue = new MemQueue(100);
         org.apache.log4j.BasicConfigurator.configure();
 
-        final MQWriter producer = queue.getProducer();
+        final MQWriteProcessor producer = queue.getProducer();
 
-
-        MQSubscriber subscriber = queue.getMqSubscriber();
+        MQSubscribeProcessor subscriber = queue.getMqSubscriber();
         subscriber.subscribe("^[^0-9]*[12]?[0-9]{1,2}[^0-9]*", new SubscriptionListener());
 
         for(int i = 0;i<10;i++){
@@ -39,7 +37,7 @@ public class MainClass {
         /*for(int j = 0; j < 80000; j++)
             producer.WriteMessage(String.format("Adding Index "+j));*/
 
-        final MQReader reader = queue.getMqReader(new QueueListener(), "Reader1");
+        final MQReadProcessor reader = queue.getMqReader(new QueueListener(), "Reader1");
         reader.connect();
         System.out.println("Reader is : "+reader.isConnected());
         Runnable readerRunnable = () -> {

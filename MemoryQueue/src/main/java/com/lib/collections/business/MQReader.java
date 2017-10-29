@@ -5,6 +5,7 @@ import com.lib.collections.core.enums.MQConnectionState;
 import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.enums.MqReturnCode;
 import com.lib.collections.core.inteface.MQMessageReader;
+import com.lib.collections.core.inteface.MQReadProcessor;
 import com.lib.collections.queue.InMemQueue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.apache.log4j.Logger;
@@ -16,7 +17,7 @@ import java.util.concurrent.TimeoutException;
 /**
  * Created by nikzz on 28/10/17.
  */
-public class MQReader {
+public class MQReader implements MQReadProcessor{
 
     private InMemQueue queue;
 

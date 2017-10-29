@@ -4,6 +4,7 @@ import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MQConnectionState;
 import com.lib.collections.core.inteface.MQMessageReader;
 import com.lib.collections.core.inteface.MQSubscriptionReader;
+import com.lib.collections.core.inteface.MQWriteProcessor;
 import com.lib.collections.queue.InMemQueue;
 import com.lib.collections.core.classes.MQWriteResponse;
 import com.lib.collections.core.enums.MqReturnCode;
@@ -17,7 +18,7 @@ import java.util.concurrent.TimeoutException;
 /**
  * Created by nikzz on 27/10/17.
  */
-public class MQWriter {
+public class MQWriter implements MQWriteProcessor {
     private String id;
     private InMemQueue queue;
 
@@ -45,14 +46,17 @@ public class MQWriter {
         this.subscriberReader = subscriberReader;
     }
 
+    @Override
     public boolean isConnected() {
         return isConnected;
     }
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public MQConnectionState connect(){
         if(!isConnected){
             isConnected = true;
@@ -60,6 +64,7 @@ public class MQWriter {
         return MQConnectionState.CONNECTED;
     }
 
+    @Override
     public MQWriteResponse WriteMessage(final String message){
         MQWriteResponse response = new MQWriteResponse();
 
