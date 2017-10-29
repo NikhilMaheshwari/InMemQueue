@@ -22,7 +22,7 @@ public enum MqReturnCode {
      */
     SUCCESS,
     /**
-     * Failure while processing 
+     * Failure while processing
      */
     FAILURE
 }
