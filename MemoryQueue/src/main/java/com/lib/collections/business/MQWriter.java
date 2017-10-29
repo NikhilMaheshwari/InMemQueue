@@ -1,12 +1,16 @@
 package com.lib.collections.business;
 
+import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MQConnectionState;
+import com.lib.collections.core.inteface.MQMessageReader;
+import com.lib.collections.core.inteface.MQSubscriptionReader;
 import com.lib.collections.queue.InMemQueue;
 import com.lib.collections.core.classes.MQWriteResponse;
 import com.lib.collections.core.enums.MqReturnCode;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.apache.log4j.Logger;
 
+import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
 
@@ -18,6 +22,9 @@ public class MQWriter {
     private InMemQueue queue;
 
     private boolean isConnected;
+
+    private MQSubscriptionReader subscriberReader;
+
     private static Logger logger = Logger.getLogger(MQWriter.class);
 
     private static MQWriter mqWriter;
@@ -32,6 +39,10 @@ public class MQWriter {
             mqWriter = new MQWriter(queue);
         }
         return mqWriter;
+    }
+
+    protected void attachSubscriber(MQSubscriptionReader subscriberReader){
+        this.subscriberReader = subscriberReader;
     }
 
     public boolean isConnected() {
@@ -55,6 +66,7 @@ public class MQWriter {
         try{
             logger.info("Write request from thread : "+Thread.currentThread().getId() + " with value : "+message);
             queue.put(message);
+            SendToSubscriber(message);
             SetSuccessMessage(response);
             logger.info("Write success from thread : "+ Thread.currentThread().getId() + " with value : "+message);
         }
@@ -76,6 +88,15 @@ public class MQWriter {
         }
 
         return response;
+    }
+
+    private void SendToSubscriber(String message){
+        if(subscriberReader == null){
+            return;
+        }
+        String messageId = UUID.randomUUID().toString();
+        Message subsMessage = new Message(messageId, message, new Date());
+        subscriberReader.OnRead(subsMessage);
     }
 
     private void SetErrorMessage(MQWriteResponse response, MqReturnCode returnCode, String errorMessage){

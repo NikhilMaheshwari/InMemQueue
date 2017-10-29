@@ -6,10 +6,12 @@ import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.enums.MqReturnCode;
 import com.lib.collections.core.inteface.MQMessageReader;
 import com.lib.collections.queue.InMemQueue;
+import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.apache.log4j.Logger;
 
 import java.util.Date;
 import java.util.UUID;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Created by nikzz on 28/10/17.
@@ -83,14 +85,14 @@ public class MQReader {
             throw new IllegalAccessException("Read is not enabled for reader.");
         }
         isReading = true;
-        Thread thread = new Thread(() -> read());
-        thread.start();
+
+        read();
     }
 
     private void read() {
         try {
             while (isReading) {
-                String data = queue.take();
+                final String data = queue.take();
                 String messageId = UUID.randomUUID().toString();
                 Date createdOn = new Date();
                 Message message = new Message(messageId, data, createdOn);
@@ -99,7 +101,21 @@ public class MQReader {
                 if(action == MQReadAction.COMMIT){
                     continue;
                 }
-                queue.put(data);
+                /*MQWriter writer = MQWriter.getMqWriter(queue);
+                writer.connect();
+                writer.WriteMessage(data);*/
+                Thread thread = new Thread(() -> {
+                    try {
+                        queue.put(data);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (InvalidArgumentException e) {
+                        e.printStackTrace();
+                    } catch (TimeoutException e) {
+                        e.printStackTrace();
+                    }
+                });
+                thread.start();
             }
         }
         catch(InterruptedException interruptedException){

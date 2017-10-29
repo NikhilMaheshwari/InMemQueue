@@ -2,11 +2,13 @@ package com.lib.collections.main;
 
 import com.lib.collections.MemQueue;
 import com.lib.collections.business.MQReader;
+import com.lib.collections.business.MQSubscriber;
 import com.lib.collections.business.MQWriter;
 import com.lib.collections.core.classes.Message;
 import com.lib.collections.core.enums.MQReadAction;
 import com.lib.collections.core.enums.MqReturnCode;
 import com.lib.collections.core.inteface.MQMessageReader;
+import com.lib.collections.core.inteface.MQSubscriptionReader;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 
 /**
@@ -14,16 +16,19 @@ import com.sun.javaws.exceptions.InvalidArgumentException;
  */
 public class MainClass {
     public static void main(String[] args) throws InvalidArgumentException {
-        MemQueue queue = new MemQueue(1000);
+        MemQueue queue = new MemQueue(100);
         org.apache.log4j.BasicConfigurator.configure();
 
         final MQWriter producer = queue.getProducer();
 
 
+        MQSubscriber subscriber = queue.getMqSubscriber();
+        subscriber.subscribe("^[^0-9]*[12]?[0-9]{1,2}[^0-9]*", new SubscriptionListener());
+
         for(int i = 0;i<10;i++){
             final int index = i;
             Runnable runnable = () -> {
-                for(int j = 0; j < 80; j++)
+                for(int j = 0; j < 800; j++)
                    producer.WriteMessage(String.format("Adding Index "+index + " Value : "+ j));
             };
 
@@ -31,25 +36,47 @@ public class MainClass {
             thread.start();
         }
 
-        MQReader reader = queue.getMqReader(new QueueListener(), "Reader1");
+        /*for(int j = 0; j < 80000; j++)
+            producer.WriteMessage(String.format("Adding Index "+j));*/
+
+        final MQReader reader = queue.getMqReader(new QueueListener(), "Reader1");
+        reader.connect();
+        System.out.println("Reader is : "+reader.isConnected());
+        Runnable readerRunnable = () -> {
+            try {
+                reader.startReading();
+
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        };
+
+        Thread readerThread = new Thread(readerRunnable);
+        readerThread.start();
+
         try {
-            reader.connect();
-            System.out.println("Reader is : "+reader.isConnected());
-            reader.startReading();
             Thread.sleep(30000);
-            reader.disconnect();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        reader.disconnect();
+
         System.out.print(producer.toString());
         return;
     }
 
 }
+
+class SubscriptionListener implements MQSubscriptionReader{
+
+    @Override
+    public void OnRead(Message message) {
+        System.out.println("Subscription message received : "+message.toString());
+    }
+}
 class QueueListener implements MQMessageReader {
 
+    private int readCount = 0;
     private int temp = 1;
 
     @Override
@@ -61,6 +88,8 @@ class QueueListener implements MQMessageReader {
             return MQReadAction.ROLLBACK;
         }
         temp++;
+        readCount++;
+        System.out.println("Total Reads done : "+readCount);
         return MQReadAction.COMMIT;
     }
 

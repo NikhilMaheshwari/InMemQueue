@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class InMemQueue  {
 
-    private final Lock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();
     private final Condition notFull  = lock.newCondition();
     private final Condition notEmpty = lock.newCondition();
 
@@ -47,12 +47,17 @@ public class InMemQueue  {
         lock.lock();
 
         try {
-            while (count == items.length)
+            if (lock.isHeldByCurrentThread())
+                System.out.printf("Thread %s has entered its critical section.%n",
+                        Thread.currentThread().getName());
+            while (count == items.length) {
                 notFull.await();
+            }
             items[putptr] = x;
             if (++putptr == items.length) putptr = 0;
             ++count;
-            notEmpty.signal();
+            notEmpty.signalAll();
+            System.out.printf("Thread %s has finished working.%n", Thread.currentThread().getName());
         } finally {
             lock.unlock();
         }
@@ -66,12 +71,13 @@ public class InMemQueue  {
         try {
             while (count == 0)
                 notEmpty.await();
-            String x = items[takeptr];
+            StringBuilder data = new StringBuilder();
+            data.append(items[takeptr]);
             items[takeptr] = null;
             if (++takeptr == items.length) takeptr = 0;
             --count;
-            notFull.signal();
-            return x;
+            notFull.signalAll();
+            return data.toString();
         } finally {
             lock.unlock();
         }
@@ -81,7 +87,8 @@ public class InMemQueue  {
     @Override
     public String toString() {
         StringBuilder response = new StringBuilder();
-        response.append(String.format("InMemQueue of size %d. \n", items.length));
+        response.append(String.format("InMemQueue of capacity %d. \n", items.length));
+        response.append(String.format("and Current size %d", count));
         if(items.length == 0 ){
             response.toString();
         }

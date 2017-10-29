@@ -1,8 +1,10 @@
 package com.lib.collections;
 
 import com.lib.collections.business.MQReader;
+import com.lib.collections.business.MQSubscriber;
 import com.lib.collections.business.MQWriter;
 import com.lib.collections.core.inteface.MQMessageReader;
+import com.lib.collections.core.inteface.MQSubscriptionReader;
 import com.lib.collections.queue.InMemQueue;
 import com.sun.javaws.exceptions.InvalidArgumentException;
 
@@ -43,7 +45,7 @@ public class MemQueue {
         return new MQReader(queue, reader, true,name);
     }
 
-    public void subscribe(MQMessageReader reader,String pattern){
-
+    public MQSubscriber getMqSubscriber(){
+        return MQSubscriber.getMqSubscriber(queue);
     }
 }
