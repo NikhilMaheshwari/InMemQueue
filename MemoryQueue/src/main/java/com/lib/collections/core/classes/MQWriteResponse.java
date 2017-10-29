@@ -12,38 +12,64 @@ public class MQWriteResponse {
 
     private MqReturnCode returnCode;
 
+    /**
+     *
+     */
     public MQWriteResponse() {
         isSuccessful = false;
         errorMessage = null;
         returnCode = MqReturnCode.FAILURE;
     }
 
+    /**
+     * @param isSuccessful
+     * @param errorMessage
+     * @param code
+     */
     public MQWriteResponse(boolean isSuccessful, String errorMessage, MqReturnCode code) {
         this.isSuccessful = isSuccessful;
         this.errorMessage = errorMessage;
         this.returnCode = code;
     }
 
+    /**
+     * @return
+     */
     public boolean isSuccessful() {
         return isSuccessful;
     }
 
+    /**
+     * @param successful
+     */
     public void setSuccessful(boolean successful) {
         isSuccessful = successful;
     }
 
+    /**
+     * @return
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
 
+    /**
+     * @param errorMessage
+     */
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 
+    /**
+     * @return
+     */
     public MqReturnCode getReturnCode() {
         return returnCode;
     }
 
+    /**
+     * @param returnCode
+     */
     public void setReturnCode(MqReturnCode returnCode) {
         this.returnCode = returnCode;
     }

@@ -6,10 +6,13 @@ import java.util.Date;
  * Created by nikzz on 27/10/17.
  */
 public class Message {
-    public String messageId;
-    public String message;
-    public Date createDate;
+    private String messageId;
+    private String message;
+    private Date createDate;
 
+    /**
+     *
+     */
     public Message(){
         this(null, null, null);
     }
@@ -18,32 +21,55 @@ public class Message {
         this(messageId, message,null);
     }
 
+    /**
+     * @param messageId
+     * @param message
+     * @param createDate
+     */
     public Message(String messageId, String message, Date createDate) {
         this.messageId = messageId;
         this.message = message;
         this.createDate = createDate;
     }
 
+    /**
+     * @return
+     */
     public String getMessageId() {
         return messageId;
     }
 
+    /**
+     * @param messageId
+     */
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
 
+    /**
+     * @return
+     */
     public String getMessage() {
         return message;
     }
 
+    /**
+     * @param message
+     */
     public void setMessage(String message) {
         this.message = message;
     }
 
+    /**
+     * @return
+     */
     public Date getCreateDate() {
         return createDate;
     }
 
+    /**
+     * @param createDate
+     */
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }

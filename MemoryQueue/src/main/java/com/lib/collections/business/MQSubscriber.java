@@ -19,6 +19,10 @@ public class MQSubscriber implements MQSubscribeProcessor {
         subscriptionMap = new HashMap<>();
     }
 
+    /**
+     * @param queue
+     * @return
+     */
     public static MQSubscriber getMqSubscriber(final com.lib.collections.queue.Queue queue){
         if(mqSubscriber == null){
             mqSubscriber = new MQSubscriber();
@@ -27,10 +31,20 @@ public class MQSubscriber implements MQSubscribeProcessor {
         return mqSubscriber;
     }
 
+    /**
+     * @return
+     */
+    @Override
     public HashMap<String, ArrayList<MQSubscriptionReader>> getSubscriptionMap() {
         return subscriptionMap;
     }
 
+    /**
+     * @param pattern
+     * @param callback
+     * @throws InvalidArgumentException
+     */
+    @Override
     public void subscribe(String pattern, MQSubscriptionReader callback) throws InvalidArgumentException {
 
         if(pattern == null || callback == null){

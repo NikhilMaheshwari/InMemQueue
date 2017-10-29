@@ -33,18 +33,39 @@ public class MQReader implements MQReadProcessor{
 
     private static Logger logger = Logger.getLogger(MQReader.class);
 
+    /**
+     * @return
+     */
+    @Override
     public boolean isConnected() {
         return isConnected;
     }
 
+
+    /**
+     * @return
+     */
+    @Override
     public String getReaderName() {
         return readerName;
     }
 
+
+    /**
+     * @param queue
+     * @param reader
+     * @param isReadingEnabled
+     */
     public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled){
         this(queue, reader,isReadingEnabled,null);
     }
 
+    /**
+     * @param queue
+     * @param reader
+     * @param isReadingEnabled
+     * @param name
+     */
     public MQReader(final Queue queue, final MQMessageReader reader, final boolean isReadingEnabled , final String name){
         this.queue = queue;
         this.readerName = name;
@@ -52,6 +73,10 @@ public class MQReader implements MQReadProcessor{
         this.messageReader = reader;
     }
 
+    /**
+     * @return
+     */
+    @Override
     public MQConnectionState connect(){
         if(!isConnected){
             isConnected = true;
@@ -61,6 +86,10 @@ public class MQReader implements MQReadProcessor{
         return MQConnectionState.CONNECTED;
     }
 
+    /**
+     * @return
+     */
+    @Override
     public MQConnectionState disconnect(){
         if(isConnected){
             isConnected = false;
@@ -70,6 +99,10 @@ public class MQReader implements MQReadProcessor{
         return MQConnectionState.DISCONNECTED;
     }
 
+    /**
+     *
+     */
+    @Override
     public void setReadingEnabled(){
         if(isConnected)
             this.isReadingEnabled = true;
@@ -77,6 +110,10 @@ public class MQReader implements MQReadProcessor{
             throw new IllegalStateException("Reader is not connected.");
     }
 
+    /**
+     * @throws IllegalAccessException
+     */
+    @Override
     public void startReading() throws IllegalAccessException {
         if(!isConnected){
             throw new IllegalStateException("Reader is not connected.");

@@ -34,6 +34,10 @@ public class MQWriter implements MQWriteProcessor {
         this.id = UUID.randomUUID().toString();
     }
 
+    /**
+     * @param queue
+     * @return
+     */
     public static MQWriter getMqWriter(final Queue queue) {
         if(mqWriter ==null){
             mqWriter = new MQWriter(queue);
@@ -45,16 +49,25 @@ public class MQWriter implements MQWriteProcessor {
         this.subscriberReader = subscriberReader;
     }
 
+    /**
+     * @return
+     */
     @Override
     public boolean isConnected() {
         return isConnected;
     }
 
+    /**
+     * @return
+     */
     @Override
     public String getId() {
         return id;
     }
 
+    /**
+     * @return
+     */
     @Override
     public MQConnectionState connect(){
         if(!isConnected){
@@ -63,6 +76,10 @@ public class MQWriter implements MQWriteProcessor {
         return MQConnectionState.CONNECTED;
     }
 
+    /**
+     * @param message
+     * @return
+     */
     @Override
     public MQWriteResponse WriteMessage(final String message){
         MQWriteResponse response = new MQWriteResponse();

@@ -44,6 +44,10 @@ public class InMemoryQueue implements MemoryQueue{
         return new MQReader(queue, reader, true,name);
     }
 
+
+    /**
+     * @return
+     */
     public MQSubscribeProcessor getMqSubscriber(){
         return MQSubscriber.getMqSubscriber(queue);
     }
